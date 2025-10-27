@@ -1,0 +1,96 @@
+"""
+Problem Statement:
+Given an array arr[] of size n-1 with integers in the range of [1, n], 
+the array contains all distinct integers except one. Find the missing integer.
+
+Example 1:
+Input: arr[] = [1, 2, 4, 5, 6]
+Output: 3
+Explanation: The missing number from 1 to 6 is 3
+
+Example 2:
+Input: arr[] = [1, 2, 3, 5]
+Output: 4
+Explanation: The missing number from 1 to 5 is 4
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Approach:
+We use three different methods:
+1. Mathematical formula: Sum of n natural numbers - Sum of array elements
+2. XOR method: XOR of all numbers 1 to n with XOR of all array elements
+3. Cycle sort: In-place sorting to find the missing number
+"""
+
+class Solution:
+    # Method 1: Using Mathematical Formula
+    def missingNumber_formula(self, arr):
+        """
+        Uses the formula: sum of n natural numbers = n * (n + 1) / 2
+        Missing number = Expected sum - Actual sum
+        """
+        n = len(arr) + 1  # Total numbers should be n
+        expected_sum = n * (n + 1) // 2
+        actual_sum = sum(arr)
+        return expected_sum - actual_sum
+    
+    # Method 2: Using XOR (Most Efficient)
+    def missingNumber_xor(self, arr):
+        """
+        XOR property: a ^ a = 0 and a ^ 0 = a
+        XOR all numbers from 1 to n with all array elements
+        The result will be the missing number
+        """
+        n = len(arr) + 1
+        xor_all = 0
+        xor_arr = 0
+        
+        # XOR all numbers from 1 to n
+        for i in range(1, n + 1):
+            xor_all ^= i
+        
+        # XOR all array elements
+        for num in arr:
+            xor_arr ^= num
+        
+        # Missing number
+        return xor_all ^ xor_arr
+    
+    # Method 3: Using Set (Alternative approach)
+    def missingNumber_set(self, arr):
+        """
+        Create a set of all numbers from 1 to n
+        Return the number that's not in the array
+        """
+        n = len(arr) + 1
+        complete_set = set(range(1, n + 1))
+        arr_set = set(arr)
+        return list(complete_set - arr_set)[0]
+
+# Driver code
+def main():
+    solution = Solution()
+    
+    # Test case 1
+    arr1 = [1, 2, 4, 5, 6]
+    print(f"Test 1 - Formula Method: {solution.missingNumber_formula(arr1)}")
+    print(f"Test 1 - XOR Method: {solution.missingNumber_xor(arr1)}")
+    print(f"Test 1 - Set Method: {solution.missingNumber_set(arr1)}")
+    print()
+    
+    # Test case 2
+    arr2 = [1, 2, 3, 5]
+    print(f"Test 2 - Formula Method: {solution.missingNumber_formula(arr2)}")
+    print(f"Test 2 - XOR Method: {solution.missingNumber_xor(arr2)}")
+    print(f"Test 2 - Set Method: {solution.missingNumber_set(arr2)}")
+    print()
+    
+    # Test case 3
+    arr3 = [2, 3, 4, 5, 6, 7, 8]
+    print(f"Test 3 - Formula Method: {solution.missingNumber_formula(arr3)}")
+    print(f"Test 3 - XOR Method: {solution.missingNumber_xor(arr3)}")
+    print(f"Test 3 - Set Method: {solution.missingNumber_set(arr3)}")
+
+if __name__ == "__main__":
+    main()
