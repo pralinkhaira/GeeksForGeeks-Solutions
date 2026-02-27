@@ -1,0 +1,13 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/word-boggle4143/1?page=1&category=Backtracking&sortBy=submissions">Word Boggle</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p data-start="148" data-end="359"><span style="font-size: 14pt;">Given a dictionary of N distinct words and an R x C board where each cell contains one character, find all possible words from the dictionary that can be formed by a sequence of adjacent characters on the board.</span></p>
+<p><span style="font-size: 14pt;"> </span></p>
+<p data-start="361" data-end="504" data-is-last-node="" data-is-only-node=""><span style="font-size: 14pt;">We can move to any of the 8 adjacent cells (horizontally, vertically, or diagonally). A cell may be used only once while forming a single word.</span></p>
+<p><span style="font-size: 14pt;"><strong>Examples :</strong></span></p>
+<pre><span style="font-size: 14pt;"><strong>Input: </strong>N = 1, dictionary = ["CAT"], R = 3, C = 3, <br>board[][] = [[C, A, P], [A, N, D], [T, I, E]]
+<strong>Output: </strong>CAT
+<strong>Explanation</strong>: 
+<img src="https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/702105/Web/Other/blobid0_1761374026.png" alt=""></span></pre>
+<pre><span style="font-size: 14pt;"><strong>Input: </strong>N = 4, dictionary = ["GEEKS","FOR","QUIZ","GO"], R = 3, C = 3, <br>board[][] = [[G, I, Z], [U, E, K], [Q, S, E]]
+<strong>Output: </strong>GEEKS QUIZ
+<strong>Explanation</strong>: 
+<img src="https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/702105/Web/Other/blobid1_1761374027.png" alt=""></span></pre>
+<p><span style="font-size: 14pt;"><strong>Constraints:</strong><br>1 ≤ N&nbsp;≤ 15<br>1 ≤ R, C&nbsp;≤ 50<br>1 ≤ length of Word&nbsp;≤ 60<br>Each word can consist of both lowercase and uppercase letters.</span></p></div><p><span style=font-size:18px><strong>Company Tags : </strong><br><code>Amazon</code>&nbsp;<code>Microsoft</code>&nbsp;<code>MakeMyTrip</code>&nbsp;<code>Directi</code>&nbsp;<code>Google</code>&nbsp;<code>Facebook</code>&nbsp;<code>Yahoo</code>&nbsp;<code>Nvidia</code>&nbsp;<br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Recursion</code>&nbsp;<code>DFS</code>&nbsp;<code>Graph</code>&nbsp;<code>Backtracking</code>&nbsp;<code>Trie</code>&nbsp;<code>Data Structures</code>&nbsp;<code>Algorithms</code>&nbsp;<code>Advanced Data Structure</code>&nbsp;
